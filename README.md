@@ -58,7 +58,7 @@ Let's delve into the features that make The Hierophant identity:
 - **Comprehensive Control Center:** Customize footswitch behavior and functions
   for a personalized playing experience with a dedicated configuration page.
 - **Signal Chain Enhancements:** Fine-tune your sound with pre-overdrive boost,
-  post-overdrive "Purfication" (sort of a soft limiter) for level control and
+  post-overdrive "Absolution" (sort of a soft limiter) for level control and
   dynamic range management.
 
 # Patch structure
