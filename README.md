@@ -456,6 +456,8 @@ out of the delay. The “level in” parameter is applied at the start of the ch
 providing a boost. It uses a mixer output gain internally. I will try to update
 this section
 
+[![](https://mermaid.ink/img/pako:eNptUD1vgzAQ_SsnT60U1J2hEoRkCuqQqgtkuMIBVowvsg-iCPLf60Ckdqgn6-l93HuTqrgmFavG8LXq0Al8ZqWF8JIiZ8sQwYEaOUEUvc9fbIae3lJmLzBD-vIxkqudHul11aQPGswNxg1Gwm1rKGILW7YNea_ZooHjVUvVzbCdkjP6TleQkcHb_a9DViTfPoRJkMBB91rInVbCdiHsir02v-Du_9zF-BkY7n0Wy1Zyjj4YhHYjmbXSDPviGDBi4EEug5zURvXketR1mGh6yEslHfVUqjh8a3TnUpX2Hng4CB9vtlKxuIE2arjUKJRpbB32KtxlfECp1sIuXzdfpr__AAAgfsI?type=png)](https://mermaid.live/edit#pako:eNptUD1vgzAQ_SsnT60U1J2hEoRkCuqQqgtkuMIBVowvsg-iCPLf60Ckdqgn6-l93HuTqrgmFavG8LXq0Al8ZqWF8JIiZ8sQwYEaOUEUvc9fbIae3lJmLzBD-vIxkqudHul11aQPGswNxg1Gwm1rKGILW7YNea_ZooHjVUvVzbCdkjP6TleQkcHb_a9DViTfPoRJkMBB91rInVbCdiHsir02v-Du_9zF-BkY7n0Wy1Zyjj4YhHYjmbXSDPviGDBi4EEug5zURvXketR1mGh6yEslHfVUqjh8a3TnUpX2Hng4CB9vtlKxuIE2arjUKJRpbB32KtxlfECp1sIuXzdfpr__AAAgfsI)
+
 ## How it works
 
 I'm currently finalizing a detailed explanation of The Hierophant's inner
