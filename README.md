@@ -12,6 +12,19 @@ Inspired by the concept of the Akashic Records, an energetic library said to
 hold the imprint of all existence, The Hierophant Akashic Delay is always
 listening and ready to echo your previously played sound.
 
+## Not Your Average Echo Box:
+
+This might look like just another delay pedal to you, but the Hierophant packs a
+hidden punch. Regular delays let you crank up the feedback for cool rhythmic
+effects, but then you gotta somehow bypass it with an external switch to add
+layers to your sound. Moreover you usually find yourself messing with the
+feedback knob in the middle of a song which be a real pain.
+
+The Hierophant Fixes Those Annoyances!
+
+It offers two features that solve these problems: The Confessional and the
+Recitation Boost. We'll break those down in a sec...
+
 # TL;DR (Too Long;Didn’t read)
 
 If you don’t want to go through the documentation and just wanna quickly try out
@@ -22,6 +35,10 @@ the patch, I got you cover!
 - Bottom pads are menus, (check the visual documentation)
 - Second page will give you the 5% you may need (extra parameters)
 - Switches and Parameters: look at the visual documentation
+- Make sure to try The Confessional (left switch, long press) to bypass the
+  delay
+- Make sure to try The Recitation Boost to crank up the feedback (right switch,
+  long press)
 
 # Features
 
@@ -58,8 +75,8 @@ Let's delve into the features that make The Hierophant identity:
 - **Comprehensive Control Center:** Customize footswitch behavior and functions
   for a personalized playing experience with a dedicated configuration page.
 - **Signal Chain Enhancements:** Fine-tune your sound with pre-overdrive boost,
-  post-overdrive "Absolution" (sort of a soft limiter) for level control and
-  dynamic range management.
+  post-overdrive "Absolution" (compressor with added Make Up Gain) for level
+  control and dynamic range management.
 
 # Patch structure
 
@@ -129,8 +146,8 @@ Let's delve into each section:
 Tips: to remember the colors order, think of earth color (low, peach), grass
 (middle, green), and sky (blue)
 
-Additionaly, the “Confessional” and the "Recitation Boost" features will display
-the letter "C" and "F" respectively when activated (magenta).
+Additionaly, the “Confessional” and the "Recitation Boost" features will each
+display a blue pad, respectively on top left and right of the front panel.
 
 ### Parameters
 
@@ -154,11 +171,13 @@ the letter "C" and "F" respectively when activated (magenta).
 
   If Beat Sync Mode is on, the indicator will blink to the choosen division.
 
-**Overdrive (Right Cross, Top):**
+**Overdrive (Right Cross, Left/Right):**
 
 - **Heresy:** controls the amount of overdrive applied to the signal. 0 bypasses
   the overdrive entirely, but the signal still passes through the circuit.
   Higher values introduce grit and saturation.
+- Heresy output: If the overdrive is too loud when activated, you can lower it’s
+  output gain with this parameter.
 
 **Filters (Right Cross, Bottom):**
 
@@ -172,12 +191,10 @@ the letter "C" and "F" respectively when activated (magenta).
   The menu will appear on the right. From top to bottom: LPF (peach), BPF
   (green), HPF (blue). Click on the menu again to disable the filter (yellow).
 
-**Levels (Right Cross, Left and Right):**
+**Absolution Control (Right Cross, Top):**
 
-- **Level / Boost In:** This knob controls the pre-overdrive boost level. It
-  remains active even when the overdrive is bypassed.
-- **Level / Boost Out:** This knob adjusts the pre-output boost level, right
-  before the signal leaves the ZOIA.
+- **Make Up Gain (Boost In):** This knob controls the Absolution Compressor make
+  up gain.
 
 **Important Note:** In ZOIA, the neutral position (100%) for these level
 controls translates to a value of 0.8334. Anything above this setting will boost
@@ -230,7 +247,7 @@ The values are from top to bottom: 4 (blue), 3 (green), 2 (peach)
 Left switch:
 
 - short press (latch): delay on/off
-- long press (hold): “Confessional” is open. The delay keeps playing but the
+- long press: “Confessional” toggle. When on, he delay keeps playing but the
   input bypass the delay. This allows to keep the delay’s “recitation” as a
   background or even as a drum machine. A “C” appears in magenta in the front
   panel.
@@ -245,8 +262,9 @@ Middle switch:
 Right switch:
 
 - Short press (latch): overdrive on/off
-- Long press (hold): boost the recitation until release. A “F” appears in
-  magenta in the front panel.
+- Long press: Recitation Boost Toggle. Boost the recitation until disabled. A
+  “F” appears in magenta in the front panel. The intensity will grow with the
+  boost power. (See Boost Duration in settings)
 
 External footswitch: cycle through different variable filters (Off, lowpass,
 bandpass, highpass). The right bottom indicator will change color accordingly
@@ -262,16 +280,21 @@ the patch!
 
 This page lets you adjust settings to your liking:
 
-- **Smooth Delay:** This controls the fade-in and fade-out time for the delay
-  effect when switching it on or off. Adjust this setting to achieve the desired
-  transition smoothness. 0 means no transition, 1 means 12 seconds transition.
-- Heresy output: If the overdrive is too loud when activated, you can lower it’s
-  output gain with this parameter.
-- Absolution: The overdrive output is send to a compressor set as soft limiter .
-  You can control the limit with this parameter. Value 0 means no effect, 1 is
-  -30db limiter.
+- **Smooth Delay:** This controls the fade-out time for the delay effect when
+  switching it off. Adjust this setting to achieve the desired transition
+  smoothness. 0 means no transition, 1 means 20 seconds transition.
 - Boost duration: how long the Recitation Boost takes to go to full level. 0 is
-  instant, 1 is 5 seconds. (it uses a CV filter internally)
+  instant, 1 is 20 seconds. (it uses a CV filter internally). The release will
+  be progressive but is fixed.
+- **Output Volume/Boost:** This knob adjusts the pre-output boost level, right
+  before the signal leaves the ZOIA.
+- Absolution: The audio input is send to a compressor with added "Make Up gain"
+  (see page 0) (missing on the Zoia). You can control the threshold with this
+  parameter. Value 0 means 0db, 1 is -48db. (It’s limited to -48db because
+  higher values are too CPU intensive).
+- Max Boost: Max boost in Recitation Boost Mode
+- Absolution on/off (yellow button): turn on and off Absolution Compressor and
+  Make Up Gain
 
 ## Controls (page 2)
 
@@ -281,8 +304,7 @@ the functions of the left, middle, and right stomp switches.
 **Layout:**
 
 - The panel is divided into three columns, each representing a footswitch.
-- Triggers (Top): These define when the action occurs. Note that middle switch
-  has no “hold” version.
+- Triggers (Top): These define when the action occurs.
 - Actions (Bottom): Choose the desired function for each footswitch, with
   default color-coded options for easy pairing. Blue is for the external
   footswitch default.
@@ -318,20 +340,35 @@ Exemple:
 You can customize incoming MIDI CC parameters by using the Zoia starred menu.
 See Zoia documentation on how to use it if needed.
 
-These are the default values. (Standard midi function is in parenthesis):
+These are the default values.
 
-- CC 5 (portamento) : Delay fade duration
-- CC 7 (Volume MSB) : Output level/boost
-- CC 11 (Expression MSB) : Delay modulation depth
-- CC 12 : Heresy level
+### Values
+
 - CC 16 : Delay Time
 - CC 17 : Recitation level
+- CC 91 : Delay dry/wet level
 - CC 18 : Delay modulation rate
-- CC 71 : Cutoff Resonance
+- CC 11 : Delay modulation depth
+
+- CC 7 : Output level/boost
+- CC 12 : Heresy level
+- CC 89 : Heresy output gain
 - CC 74 : Cutoff Frequency
-- CC 86 : Absolution level
+- CC 71 : Cutoff Resonance
+
+- CC 5 : Delay fade duration
+- CC 90 : Absolution level
 - CC 87 : Input level/boost
-- CC 91 (reverb level): Delay dry/wet level
+- CC 87 : Make Up Gain
+
+### on/off switches (send 0 for off or 127 for on)
+
+- CC 80 : Delay on/off
+- CC 81 : Overdrive on/off
+- CC 82 : Absolution compressor on/off
+- CC 85 : Confessional on/off
+- CC 86 : Beat Sync on/off
+- CC 88 : Recitation Boost on/off
 
 To configure pitch bend, expression pedal and external footswitch, see
 “connexions”.
@@ -432,37 +469,39 @@ try it! Made for the guitar.
 The sync indicator might show the MIDI clock as 'running' even after unplugging
 the cable. This is a visual issue and doesn't affect how the delay syncs. Always
 stop the clock on your device before unplugging the MIDI cable. Simply reload
-the patch if you experience this issue.
+the patch if you experience this issue. Sometimes it also doesn’t work with some
+devices.
+
+# Revisions
+
+## 0.2 - Fixes and enhancements
+
+- Fix an issue with the delay transition being to fast
+- CPU optimizations
+
+- Absolution Compressor is now placed in the start of the signal past and follow
+  by the booster as Make Up Gain. It is now set up as a compressor instead of a
+  limiter.
+- Absolution can be turned off by a yellow switch on page 2
+- Recitation Boost can now go up to 20 seconds
+- Confessional and Recitation Boost are now latches
+- Fix MIDI issues when using starred menu for on/off values
+- Improved MIDI CC defaults
+- Move some parameters to page 0 and 1 (see new picture manual)
+- Improved default settings
+- New parameter to set up the Recitation Boost limit
+- Removes transition when turning the delay on
+- Smooth transition for delay has been greatly improved as well as Recitation
+  Boost transition
+- Confessional and Recitation Boost are now latches switches.
+- Confessional and Recitation Boost indicators are now single pads
+- Removed the "hold" version of the switches for CPU optimization and
+  simplification.
 
 # Technical guide
 
-This section caters to experienced ZOIA users and developers who want to explore
-the inner workings of The Hierophant. It delves into the patch's internal
-structure, providing access to modify its core functionalities.
-
-**Not essential for basic use:** If you're simply interested in playing and
-exploring the sounds of The Hierophant, you can safely skip this section. The
-patch is designed to be functional and enjoyable right out of the box.
-
-**For the Curious:** If you're eager to learn more about ZOIA architecture or
-want to customize The Hierophant to a deeper level, this section provides the
-necessary information
-
-## Signal Path
-
-The patch takes MONO in (left) and output STEREO. The overdrives affect both the
-direct signal and the delay. The filter, however, only impacts the sound coming
-out of the delay. The “level in” parameter is applied at the start of the chain,
-providing a boost. It uses a mixer output gain internally. I will try to update
-this section
-
-[![](https://mermaid.ink/img/pako:eNptUD1vgzAQ_SsnT60U1J2hEoRkCuqQqgtkuMIBVowvsg-iCPLf60Ckdqgn6-l93HuTqrgmFavG8LXq0Al8ZqWF8JIiZ8sQwYEaOUEUvc9fbIae3lJmLzBD-vIxkqudHul11aQPGswNxg1Gwm1rKGILW7YNea_ZooHjVUvVzbCdkjP6TleQkcHb_a9DViTfPoRJkMBB91rInVbCdiHsir02v-Du_9zF-BkY7n0Wy1Zyjj4YhHYjmbXSDPviGDBi4EEug5zURvXketR1mGh6yEslHfVUqjh8a3TnUpX2Hng4CB9vtlKxuIE2arjUKJRpbB32KtxlfECp1sIuXzdfpr__AAAgfsI?type=png)](https://mermaid.live/edit#pako:eNptUD1vgzAQ_SsnT60U1J2hEoRkCuqQqgtkuMIBVowvsg-iCPLf60Ckdqgn6-l93HuTqrgmFavG8LXq0Al8ZqWF8JIiZ8sQwYEaOUEUvc9fbIae3lJmLzBD-vIxkqudHul11aQPGswNxg1Gwm1rKGILW7YNea_ZooHjVUvVzbCdkjP6TleQkcHb_a9DViTfPoRJkMBB91rInVbCdiHsir02v-Du_9zF-BkY7n0Wy1Zyjj4YhHYjmbXSDPviGDBi4EEug5zURvXketR1mGh6yEslHfVUqjh8a3TnUpX2Hng4CB9vtlKxuIE2arjUKJRpbB32KtxlfECp1sIuXzdfpr__AAAgfsI)
-
-## How it works
-
-I'm currently finalizing a detailed explanation of The Hierophant's inner
-workings but this is not my current priority. If you're eager to learn more, let
-me know in the comments below!
+See github for technical guide.
+https://github.com/sheoak/zoia-the-hierophant/blob/main/GUIDE.md
 
 # Feedback
 
@@ -470,10 +509,6 @@ I'm always looking for ways to improve my Zoia patches. Feel free to share your
 thoughts and suggestions on the patch comments section on Patchstorage or by
 sending me a private message on Discord. I appreciate your feedback, especially
 regarding the limiter and overdrive settings to optimize the sound quality
-
-# Next…
-
-This patch is hopefuly
 
 # **Thank you!**
 
