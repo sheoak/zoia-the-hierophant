@@ -2,3 +2,7 @@
 *.bak-*
 CLAUDE.md
 .claude/
+*.json
+__pycache__/
+demos/
+build.py
